@@ -2,7 +2,7 @@ import { v4 as uuidv4 } from "uuid";
 import type Task from "./types";
 
 class TodoList {
-  private readonly tasks: Task[];
+  private tasks: Task[];
 
   constructor() {
     this.tasks = [];
@@ -18,6 +18,12 @@ class TodoList {
     };
     this.tasks.push(newTask);
     return newTask;
+  };
+
+  removeTask = (id: string) => {
+    const initialLength = this.tasks.length;
+    this.tasks = this.tasks.filter((task) => task.id !== id);
+    return this.tasks.length !== initialLength;
   };
 }
 
