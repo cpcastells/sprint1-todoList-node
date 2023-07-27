@@ -25,6 +25,16 @@ class TodoList {
     this.tasks = this.tasks.filter((task) => task.id !== id);
     return this.tasks.length !== initialLength;
   };
+
+  completeTask = (id: string) => {
+    const selectedTask = this.tasks.find((task) => task.id === id);
+    if (selectedTask) {
+      selectedTask.completed = true;
+      return true;
+    }
+
+    return false;
+  };
 }
 
 export default TodoList;
