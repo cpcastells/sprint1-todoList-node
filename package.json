@@ -28,5 +28,9 @@
     "jest-ts-webcompat-resolver": "^1.0.0",
     "ts-jest": "^29.1.1",
     "typescript": "^5.1.6"
+  },
+  "dependencies": {
+    "@types/uuid": "^9.0.2",
+    "uuid": "^9.0.0"
   }
 }
