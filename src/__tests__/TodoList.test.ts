@@ -44,4 +44,16 @@ describe("Given a TodoList class", () => {
       expect(removed).toBe(true);
     });
   });
+
+  describe("When the TodoList 'completeTask' method is called with a ID", () => {
+    test("Then it should mark the corresponding task as completed", () => {
+      const taskDescription = "Take a bath";
+      const task = todoList.addTask(taskDescription);
+      const taskId = task.id;
+
+      const completed = todoList.completeTask(taskId);
+
+      expect(completed).toBe(true);
+    });
+  });
 });
