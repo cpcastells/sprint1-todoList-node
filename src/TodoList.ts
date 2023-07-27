@@ -8,6 +8,8 @@ class TodoList {
     this.tasks = [];
   }
 
+  showTasks = () => this.tasks;
+
   addTask = (description: string) => {
     const newTask = {
       id: uuidv4(),
