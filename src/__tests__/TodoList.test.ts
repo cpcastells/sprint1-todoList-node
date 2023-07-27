@@ -32,4 +32,16 @@ describe("Given a TodoList class", () => {
       expect(allTasks).toContain(task3);
     });
   });
+
+  describe("When the TodoList 'remove' method is called with a ID", () => {
+    test("Then it should remove the corresponding task from the list,", () => {
+      const taskDescription = "Sleep";
+      const task = todoList.addTask(taskDescription);
+      const taskId = task.id;
+
+      const removed = todoList.removeTask(taskId);
+
+      expect(removed).toBe(true);
+    });
+  });
 });
