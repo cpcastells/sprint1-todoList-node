@@ -17,4 +17,19 @@ describe("Given a TodoList class", () => {
       expect(task.completed).toBe(false);
     });
   });
+
+  describe("When the TodoList 'showTasks' is called", () => {
+    test("Then it should show a list of the tasks", () => {
+      const task1 = todoList.addTask("Task 1");
+      const task2 = todoList.addTask("Task 2");
+      const task3 = todoList.addTask("Task 3");
+
+      const allTasks = todoList.showTasks();
+
+      expect(allTasks).toHaveLength(3);
+      expect(allTasks).toContain(task1);
+      expect(allTasks).toContain(task2);
+      expect(allTasks).toContain(task3);
+    });
+  });
 });
