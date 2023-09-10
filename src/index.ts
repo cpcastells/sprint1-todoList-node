@@ -3,7 +3,7 @@ import TodoList from "./TodoList.js";
 const todoList = new TodoList();
 
 const addTask = (): void => {
-  process.stdout.write("Enter task description: ");
+  process.stdout.write("\nEnter task description: ");
   process.stdin.once("data", (data) => {
     const description = data.toString().trim();
     if (description !== "") {
@@ -16,7 +16,7 @@ const addTask = (): void => {
 
 const markTaskAsCompleted = (): void => {
   listTasks();
-  process.stdout.write("Enter the task ID to mark as completed: ");
+  process.stdout.write("\nEnter the task ID to mark as completed: ");
   process.stdin.once("data", (data) => {
     const taskId = data.toString().trim();
     todoList.completeTask(taskId);
@@ -26,7 +26,7 @@ const markTaskAsCompleted = (): void => {
 
 const removeTask = (): void => {
   listTasks();
-  process.stdout.write("Enter the task ID to remove: ");
+  process.stdout.write("\nEnter the task ID to remove: ");
   process.stdin.once("data", (data) => {
     const taskId = data.toString().trim();
     todoList.removeTask(taskId);
@@ -55,7 +55,7 @@ const commands = {
 };
 
 function displayMenu() {
-  console.log("Command list:\n");
+  console.log("\nCommand list:\n");
   Object.entries(commands).forEach(([command, { description }]) => {
     console.log(`${command}: ${description}`);
   });
