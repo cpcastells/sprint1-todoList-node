@@ -1,5 +1,5 @@
 import { v4 as uuidv4 } from "uuid";
-import type Task from "./types";
+import type Task from "./types.js";
 
 class TodoList {
   private tasks: Task[];
